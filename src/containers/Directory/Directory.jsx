@@ -6,10 +6,10 @@ import API from "../../utils/API";
 class Directory extends Component {
   // Variable to hold state
   state = {
-    search: "",
     employeeList: [],
-    sortName: "",
+    search: "",
     sortDOB: "",
+    sortName: "",
   };
 
   // Makes a GET request to the random employee API when the component mounts

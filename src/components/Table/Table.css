@@ -1,4 +1,7 @@
 .sortable-column:hover {
-    font-size: 1.2rem;
-    color: red;
+    color:rgb(83, 83, 83);
+}
+
+.sort-arrow:hover {
+    color:red;
 }
