@@ -6,15 +6,15 @@ const Table = () => {
     <div className="container">
       <div className="column is-12">
         <div className="row">
-          <table className="table is-fullwidth">
+          <table className="table is-fullwidth is-striped is-hoverable">
             <thead>
               <tr>
                 <th>Image</th>
-                <th>Name</th>
+                <th>Name <span>⇳</span></th>
                 <th>Phone</th>
                 <th>Email</th>
                 <th>
-                  <abbr title="Date of Birth">DOB</abbr>
+                  <abbr title="Date of Birth">DOB <span>⇳</span></abbr>
                 </th>
               </tr>
             </thead>
