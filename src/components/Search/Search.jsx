@@ -1,11 +1,20 @@
-import React from 'react';
+import React from "react";
 
-const Search = () => {
-    return (
-        <div>
-            <div className="column is-4 is-offset-4"><input className="input is-normal is-rounded" type="text" placeholder="Search" /></div>
-        </div>
-    );
+const Search = (props) => {
+  return (
+    <div>
+      <div className="column is-4 is-offset-4">
+        <input
+          className="input is-normal is-rounded"
+          type="text"
+          placeholder="Search"
+          name="search"
+          value={props.value}
+          onChange={props.handleInputChange}
+        />
+      </div>
+    </div>
+  );
 };
 
 export default Search;
