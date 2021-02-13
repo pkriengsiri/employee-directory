@@ -73,7 +73,7 @@ class Directory extends Component {
           employeeList: sortedEmployees,
           sortDOB: "asc",
         });
-      } else if (this.state.sortDOB === "asc") {
+      } else if (this.state.sortDOB ===  "asc") {
         const sortedEmployees = this.state.employeeList.sort((a, b) => {
           return b.dob.date.localeCompare(a.dob.date);
         });

@@ -6,10 +6,6 @@ table {
     color:rgb(153, 153, 153);
 }
 
-.sort-arrow:hover {
-    color:red;
-}
-
-.red {
+.arrow {
     color:red;
 }
