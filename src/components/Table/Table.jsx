@@ -1,5 +1,6 @@
 import React from "react";
 import TableRow from "../TableRow/TableRow";
+import "./Table.css"
 
 const Table = ({employeeList}) => {
   return (
@@ -10,10 +11,10 @@ const Table = ({employeeList}) => {
             <thead>
               <tr>
                 <th>Image</th>
-                <th>Name <i className="fas fa-arrows-alt-v"></i></th>
+                <th className="sortable-column">Name <i className="fas fa-arrows-alt-v sort-arrow"></i></th>
                 <th>Phone</th>
                 <th>Email</th>
-                <th>
+                <th className="sortable-column">
                   <abbr title="Date of Birth">DOB <i className="fas fa-arrows-alt-v"></i></abbr>
                 </th>
               </tr>

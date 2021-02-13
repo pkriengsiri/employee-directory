@@ -8,6 +8,7 @@ const TableRow = ({picture, name, phone, email, dob}) => {
     const emailLink = `mailto:${email}`;
 
     // Format DOB
+    const dobFormatted = dob.date.substring(0,10);
 
     return (
         <tr>
@@ -15,7 +16,7 @@ const TableRow = ({picture, name, phone, email, dob}) => {
             <td>{fullName}</td>
             <td>{phone}</td>
             <td><a href={emailLink}>{email}</a></td>
-            <td>1991-05-01</td>
+            <td>{dobFormatted}</td>
         </tr>
     );
 };
