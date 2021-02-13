@@ -3,6 +3,7 @@ import TableRow from "../TableRow/TableRow";
 import "./Table.css";
 
 const Table = ({ employeeList, handleSort }) => {
+  // Function to show the sort arrow when the user hovers over a sortable field
   const showArrow = (e) => {
     if (e.target.id === "name-column") {
       const target = document.getElementById("name-arrow");
@@ -13,6 +14,7 @@ const Table = ({ employeeList, handleSort }) => {
     }
   };
 
+  // Function to remove the sort arrow when the user hovers over a sortable field
   const removeArrow = (e) => {
     if (e.target.id === "name-column") {
       const target = document.getElementById("name-arrow");
