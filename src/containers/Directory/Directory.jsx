@@ -34,7 +34,7 @@ class Directory extends Component {
 
     if (value !== "") {
       const filteredEmployees = this.state.employeeList.filter((employee) => {
-        const fullName = employee.name.first.concat(employee.name.last).toLowerCase().trim();
+        const fullName = employee.name.first.concat(" ",employee.name.last).toLowerCase().trim();
         return fullName.includes(value.toLowerCase().trim());
       });
       console.log(filteredEmployees);
@@ -93,7 +93,7 @@ class Directory extends Component {
           value={this.state.search}
         />
         <Table
-          employeeList={this.state.filtered?this.state.filteredEmployees: this.state.employeeList}
+          employeeList={this.state.filtered ? this.state.filteredEmployees: this.state.employeeList}
           handleSort={this.handleSort}
         />
       </div>

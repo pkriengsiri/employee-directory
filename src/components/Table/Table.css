@@ -3,9 +3,13 @@ table {
 }
 
 .sortable-column:hover {
-    color:rgb(83, 83, 83);
+    color:rgb(153, 153, 153);
 }
 
 .sort-arrow:hover {
+    color:red;
+}
+
+.red {
     color:red;
 }

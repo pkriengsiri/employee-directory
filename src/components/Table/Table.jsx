@@ -3,6 +3,18 @@ import TableRow from "../TableRow/TableRow";
 import "./Table.css"
 
 const Table = ({employeeList, handleSort}) => {
+  const turnRed = () => {
+    const target = document.getElementById("name-arrow");
+    target.classList.add("red");
+    target.classList.remove("is-hidden");
+  };
+
+  const removeRed = () => {
+    const target = document.getElementById("name-arrow");
+    target.classList.remove("red");
+    target.classList.add("is-hidden");
+  };
+
   return (
     <div className="container">
       <div className="column is-12">
@@ -11,7 +23,7 @@ const Table = ({employeeList, handleSort}) => {
             <thead>
               <tr>
                 <th>Image</th>
-                <th className="sortable-column" onClick={() => {handleSort("Name")}}>Name <i className="fas fa-arrows-alt-v sort-arrow"></i></th>
+                <th className="sortable-column" onClick={() => {handleSort("Name")}} onMouseOver={turnRed} onMouseLeave={removeRed}>Name <i className="fas fa-arrows-alt-v is-hidden" id="name-arrow"></i></th>
                 <th>Phone</th>
                 <th>Email</th>
                 <th className="sortable-column" onClick={() => {handleSort("DOB")}}>
