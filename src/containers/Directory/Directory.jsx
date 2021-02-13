@@ -6,6 +6,8 @@ import API from "../../utils/API";
 class Directory extends Component {
   // Variable to hold state
   state = {
+    filtered: false,
+    filteredEmployees: [],
     employeeList: [],
     search: "",
     sortDOB: "",
@@ -29,6 +31,17 @@ class Directory extends Component {
     this.setState({
       [name]: value,
     });
+
+    if (value !== "") {
+      const filteredEmployees = this.state.employeeList.filter((employee) => {
+        const fullName = employee.name.first.concat(employee.name.last).toLowerCase().trim();
+        return fullName.includes(value.toLowerCase().trim());
+      });
+      console.log(filteredEmployees);
+      this.setState({ filtered: true, filteredEmployees: filteredEmployees });
+    } else {
+      this.setState({ filtered: false });
+    }
   };
 
   //Handles a column sort
@@ -80,7 +93,7 @@ class Directory extends Component {
           value={this.state.search}
         />
         <Table
-          employeeList={this.state.employeeList}
+          employeeList={this.state.filtered?this.state.filteredEmployees: this.state.employeeList}
           handleSort={this.handleSort}
         />
       </div>
