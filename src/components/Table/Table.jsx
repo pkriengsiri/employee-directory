@@ -1,7 +1,7 @@
 import React from "react";
 import TableRow from "../TableRow/TableRow";
 
-const Table = () => {
+const Table = ({employeeList}) => {
   return (
     <div className="container">
       <div className="column is-12">
@@ -19,13 +19,9 @@ const Table = () => {
               </tr>
             </thead>
             <tbody>
-              <TableRow />
-              <TableRow />
-              <TableRow />
-              <TableRow />
-              <TableRow />
-              <TableRow />
-              <TableRow />
+              {employeeList.map(employee => (
+                <TableRow key={employee.id.value} {...employee}/>
+              ))}
             </tbody>
           </table>
         </div>
