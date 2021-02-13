@@ -8,6 +8,8 @@ class Directory extends Component {
   state = {
     search: "",
     employeeList: [],
+    sortName: "",
+    sortDOB: "",
   };
 
   // Makes a GET request to the random employee API when the component mounts
@@ -29,6 +31,47 @@ class Directory extends Component {
     });
   };
 
+  //Handles a column sort
+  handleSort = (field) => {
+    if (field === "Name") {
+      if (this.state.sortName === "" || this.state.sortName === "dsc") {
+        const sortedEmployees = this.state.employeeList.sort((a, b) => {
+          return a.name.last.localeCompare(b.name.last);
+        });
+        this.setState({
+          employeeList: sortedEmployees,
+          sortName: "asc",
+        });
+      } else if (this.state.sortName === "asc") {
+        const sortedEmployees = this.state.employeeList.sort((a, b) => {
+          return b.name.last.localeCompare(a.name.last);
+        });
+        this.setState({
+          employeeList: sortedEmployees,
+          sortName: "dsc",
+        });
+      }
+    } else if (field === "DOB") {
+      if (this.state.sortDOB === "" || this.state.sortDOB === "dsc") {
+        const sortedEmployees = this.state.employeeList.sort((a, b) => {
+          return a.dob.date.localeCompare(b.dob.date);
+        });
+        this.setState({
+          employeeList: sortedEmployees,
+          sortDOB: "asc",
+        });
+      } else if (this.state.sortDOB === "asc") {
+        const sortedEmployees = this.state.employeeList.sort((a, b) => {
+          return b.dob.date.localeCompare(a.dob.date);
+        });
+        this.setState({
+          employeeList: sortedEmployees,
+          sortDOB: "dsc",
+        });
+      }
+    }
+  };
+
   render() {
     return (
       <div>
@@ -36,7 +79,10 @@ class Directory extends Component {
           handleInputChange={this.handleInputChange}
           value={this.state.search}
         />
-        <Table employeeList={this.state.employeeList}/>
+        <Table
+          employeeList={this.state.employeeList}
+          handleSort={this.handleSort}
+        />
       </div>
     );
   }
