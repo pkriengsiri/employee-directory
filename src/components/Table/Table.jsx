@@ -10,11 +10,11 @@ const Table = () => {
             <thead>
               <tr>
                 <th>Image</th>
-                <th>Name <span>⇳</span></th>
+                <th>Name <i class="fas fa-arrows-alt-v"></i></th>
                 <th>Phone</th>
                 <th>Email</th>
                 <th>
-                  <abbr title="Date of Birth">DOB <span>⇳</span></abbr>
+                  <abbr title="Date of Birth">DOB <i class="fas fa-arrows-alt-v"></i></abbr>
                 </th>
               </tr>
             </thead>

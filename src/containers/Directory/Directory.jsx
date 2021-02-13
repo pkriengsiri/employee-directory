@@ -4,6 +4,11 @@ import Table from '../../components/Table/Table';
 
 class Directory extends Component {
     render() {
+        state = {
+            search: "",
+            employeeList: [];
+        }
+        
         return (
             <div>
                 <Search />
