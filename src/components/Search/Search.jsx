@@ -7,7 +7,7 @@ const Search = (props) => {
         <input
           className="input is-normal is-rounded"
           type="text"
-          placeholder="Search"
+          placeholder="Filter by name"
           name="search"
           value={props.value}
           onChange={props.handleInputChange}
