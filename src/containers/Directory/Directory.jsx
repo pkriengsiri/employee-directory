@@ -28,13 +28,14 @@ class Directory extends Component {
 
   // Changes state when an input change occurs
   handleInputChange = (e) => {
+    document.querySelector(".message").classList.add("is-hidden");
     const { name, value } = e.target;
     this.setState({
       [name]: value,
     });
 
     if (value !== "") {
-      document.querySelector(".message").classList.add("is-hidden");
+      
       const filteredEmployees = this.state.employeeList.filter((employee) => {
         const fullName = employee.name.first.concat(" ",employee.name.last).toLowerCase().trim();
         return fullName.includes(value.toLowerCase().trim());
