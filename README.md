@@ -2,14 +2,12 @@
 A React-based employee directory
 
 ## Description
-
+This application is a single-page employee directory.  It was written using JavaScript and the React JavaScript library.  The template for the application was created using the create-react-app npm package.  Styling was performing using CSS and the Bulma CSS framework (with node-sass for compiling .scss to .css).
 
 ### Functionality
-* 
-
-
-### NPM Dependencies
-* 
+* View a table of employee information
+* Filter employees by name
+* Sort employees by name or date of birth
 
 [Link to the repository](https://github.com/pkriengsiri/employee-directory)
   
@@ -22,7 +20,7 @@ A React-based employee directory
 * [Questions](#questions)
   
 ## Installation
-From GitHub, fork the repo and upload all contents to the deployed server.  The server must have Node.js installed. Once forked, run `npm i` from the root directory to install required dependencies.  
+From GitHub, fork the repo and upload all contents to the deployed server.  The server must have Node.js and the . Once forked, run `npm i` from the root directory to install required dependencies.  
 
 Run `npm start` to start the application locally.  
 

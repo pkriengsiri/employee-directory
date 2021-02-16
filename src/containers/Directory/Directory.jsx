@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Search from "../../components/Search/Search";
+import SearchWarning from "../../components/SearchWarning/SearchWarning";
 import Table from "../../components/Table/Table";
 import API from "../../utils/API";
 
@@ -33,12 +34,16 @@ class Directory extends Component {
     });
 
     if (value !== "") {
+      document.querySelector(".is-warning").classList.add("is-hidden");
       const filteredEmployees = this.state.employeeList.filter((employee) => {
         const fullName = employee.name.first.concat(" ",employee.name.last).toLowerCase().trim();
         return fullName.includes(value.toLowerCase().trim());
       });
       console.log(filteredEmployees);
       this.setState({ filtered: true, filteredEmployees: filteredEmployees });
+      if(filteredEmployees.length===0) {
+        document.querySelector(".is-warning").classList.remove("is-hidden");
+      }
     } else {
       this.setState({ filtered: false });
     }
@@ -92,6 +97,7 @@ class Directory extends Component {
           handleInputChange={this.handleInputChange}
           value={this.state.search}
         />
+        <SearchWarning />
         <Table
           employeeList={this.state.filtered ? this.state.filteredEmployees: this.state.employeeList}
           handleSort={this.handleSort}

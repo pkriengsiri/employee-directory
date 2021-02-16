@@ -29,6 +29,7 @@ const Table = ({ employeeList, handleSort }) => {
     <div className="container">
       <div className="column is-12">
         <div className="row">
+        <p className="ml-3">Click on column headings to sort by name or date of birth</p>
           <table className="table is-fullwidth is-striped is-hoverable">
             <thead>
               <tr>
