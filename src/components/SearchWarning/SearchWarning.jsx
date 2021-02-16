@@ -2,7 +2,7 @@ import React from "react";
 
 const SearchWarning = () => {
   return (
-    <article className="container message is-warning is-hidden">
+    <article className="container message is-hidden mt-3">
       <div className="message-header">
         <p>No results found!</p>
         {/* <button className="delete" aria-label="delete"></button> */}

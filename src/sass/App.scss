@@ -24,6 +24,10 @@ $body-background-color: $beige-lighter;
 $control-border-width: 2px;
 $input-border-color: transparent;
 $input-shadow: none;
+$message-radius: 15px;
+$message-header-radius: 15px;
+$message-header-background-color: rgb(255, 146, 146);
+// $message-body-color: rgb(255, 236, 236);
 
 
 // Import only what you need from Bulma
